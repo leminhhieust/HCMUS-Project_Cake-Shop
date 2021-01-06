@@ -1,0 +1,67 @@
+﻿<Window x:Class="CakeShop.Detail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CakeShop"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Detail" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded"
+        Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize">
+
+    <Border Background="LightPink" CornerRadius="50" BorderBrush="#ff0095" BorderThickness="5">
+        <Grid>
+            
+            <!--#region Grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="59*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+
+            <!--#region Title and Button -->
+            <TextBlock Name="Title" Grid.ColumnSpan="2" Text="CHI TIẾT SẢN PHẨM" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#e5004b"/>
+
+            <Button Grid.Column="2" Name="delBtn" HorizontalAlignment="Right" VerticalAlignment="Top" Width="66" Click="delBtn_Click" Height="42" Margin="0,10,125,0">
+                <materialDesign:PackIcon Kind="Delete" Height="32" Width="42" />
+            </Button>
+
+            <Button Grid.Column="2" Name="backBtn" HorizontalAlignment="Right" VerticalAlignment="Top" Width="68" Click="backBtn_Click" Height="42" Margin="0,10,46.6,0">
+                <materialDesign:PackIcon Kind="ArrowLeft" Height="32" Width="41" />
+            </Button>
+            <!--#endregion-->
+
+            <!--#region Content -->
+            <Image Grid.Row="1" Stretch="Fill" VerticalAlignment="Top" Name="CakeImg" Source="{Binding BMPImg}" Height="500" Width="500"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="{Binding Name}" Height="60" TextAlignment="Left" FontSize="30" FontWeight="Bold" Foreground="#ff0095" Margin="0 0 0 15"/>
+                <Separator Margin="0 0 0 15"/>
+                
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Giá mua vào: " Height="60" FontSize="20" FontWeight="Bold" Width="155"/>
+                    <TextBlock Text="{Binding PurchasePrice}" Height="60" TextAlignment="Left" FontSize="25" FontWeight="Bold" Foreground="Red" Width="120"/>
+                    
+                    <TextBlock Text="Giá bán ra: " Height="60" FontSize="20" FontWeight="Bold" Margin="20 0 0 0" Width="150"/>
+                    <TextBlock Text="{Binding SellPrice}" Height="60" TextAlignment="Left" FontSize="25" FontWeight="Bold" Foreground="Red" Width="120"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Ngày thêm: " Height="60" FontSize="20" FontWeight="Bold" Width="155"/>
+                    <TextBlock Text="{Binding DateAdded, StringFormat=dd/MM/yyyy}" Height="60" FontSize="20" FontWeight="Bold" Width="120" Foreground="#e5004b"/>
+                    <TextBlock Text="Loại sản phẩm:" Height="60" FontSize="20" FontWeight="Bold" Width="150" Margin="20 0 0 0"/>
+                    <TextBlock Text="{Binding Type}" Height="60" FontSize="20" FontWeight="Bold" Width="120" Foreground="#e5004b"/>
+                </StackPanel>
+                
+                <TextBlock Text="Mô tả sản phẩm:" Height="40" FontSize="20" FontWeight="Bold"/>
+                <ScrollViewer Height="250" Width="570" HorizontalAlignment="Left">
+                    <TextBlock TextAlignment="Justify" TextWrapping="Wrap" Name="Description" Width="550" HorizontalAlignment="Left" Text="{Binding Description}" FontSize="20" FontWeight="Bold" Foreground="#e5004b"/>
+                </ScrollViewer>
+            </StackPanel>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>

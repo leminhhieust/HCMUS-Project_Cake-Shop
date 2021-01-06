@@ -1,0 +1,122 @@
+﻿<Page x:Class="CakeShop.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CakeShop"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1400"
+      Title="Home" Loaded="Page_Loaded">
+
+    <Grid>
+        <!--#region Grid Definition -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="661*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+
+        <!--#region Title and Button -->
+        <TextBlock Grid.Column="1" Text="DANH SÁCH SẢN PHẨM" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ff0095"/>
+
+        <TextBlock Grid.Row="1" Text="LOẠI SẢN PHẨM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#ff0095"/>
+
+        <Button Name="AddBtn" Content="Thêm bánh mới" Grid.Column="1" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="150" Margin="10" Click="AddUpdateCake_Click"/>
+        <!--#endregion-->
+
+        <!--#region Cake list view -->
+        <ListView Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Name="dataListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="30"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="IsSelected" Value="True"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5" Background="LightPink" Width="300" Height="500">
+                        <StackPanel>
+                            <Image Source="{Binding BMPImg}" Stretch="Fill" Height="300"/>
+                            <TextBlock Text="{Binding Name}" Height="60" FontSize="25" FontWeight="Bold" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" Margin="20"/>
+                            <TextBlock Text="{Binding SellPrice, StringFormat= '#,##đ'}" FontWeight="Bold" Foreground="Red" TextAlignment="Center" FontSize="20"/>
+                            <StackPanel Orientation="Horizontal" Margin="20 10 20 20">
+                                <Button Style="{DynamicResource MaterialDesignRaisedButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="100" Height="40" Content="CHI TIẾT" FontSize="13" FontWeight="Bold" Foreground="White" Name="DetailBtn" Click="DetailBtn_Click"/>
+                                <Button Style="{DynamicResource MaterialDesignRaisedButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="100" Height="40" Margin="60,0,0,0" Content="CẬP NHẬT" FontSize="13" FontWeight="Bold" Foreground="White" Click="AddUpdateCake_Click" Name="UpdateBtn"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--#endregion-->
+
+        <!--#region Type list view -->
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch" Name="TypeListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="0 40 0 50" VerticalAlignment="Stretch">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="3"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="IsSelected" Value="True"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Width="300" Height="45">
+                        <Button Name="TypeBtn" Content="{Binding Name}" Width="300" Height="40" FontSize="13" FontWeight="Bold" Foreground="White" Click="TypeBtn_Click" 
+                                Style="{DynamicResource MaterialDesignRaisedButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3"/>
+                        <TextBlock Text="{Binding Quantity}" Height="25" Width="20" Padding="3 0 0 0" Margin="-50 0 0 0" FontSize="15" FontWeight="Bold" Background="White"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--#endregion-->
+
+        <!--#region Pagination -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Name="Prev" Click="Prev_Click" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="Transparent" BorderBrush="Transparent" Width="50" Height="50">
+                <materialDesign:PackIcon Foreground="#ff0095" Kind="ChevronLeftCircleOutline" Height="40" Width="46" Margin="-15,0,-13.4,0"/>
+            </Button>
+            <TextBlock TextAlignment="Center" FontSize="20" Width="100" Padding="10">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} / {1}">
+                        <Binding Path="CurrentPage" />
+                        <Binding Path="TotalPage" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            <Button Name="Next" Click="Next_Click" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="Transparent" BorderBrush="Transparent" Width="50" Height="50">
+                <materialDesign:PackIcon Foreground="#ff0095" Kind="ChevronRightCircleOutline" Height="40" Width="46" Margin="-15,0,-13.4,0"/>
+            </Button>
+        </StackPanel>
+        <!--#endregion-->
+    </Grid>
+</Page>

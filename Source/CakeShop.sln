@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeShop", "CakeShop.csproj", "{BB00B2CC-A4CF-4778-90DE-FBF29C298DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB00B2CC-A4CF-4778-90DE-FBF29C298DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB00B2CC-A4CF-4778-90DE-FBF29C298DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB00B2CC-A4CF-4778-90DE-FBF29C298DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB00B2CC-A4CF-4778-90DE-FBF29C298DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D771C814-D929-4A93-975C-A1120FDC3941}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,86 @@
+﻿<Window x:Class="CakeShop.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CakeShop"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Add" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded"
+        Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize">
+
+    <Border Background="LightPink" CornerRadius="50" BorderBrush="#ff0095" BorderThickness="5">
+        <Grid>
+            <!--#region Grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="651*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+
+            <!--#region Title and Button -->
+            <TextBlock Name="Title" Grid.Column="1" Text="THÊM MỚI SẢN PHẨM" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#e5004b"/>
+            <Button Name="Cancel" Content="Hủy" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Click="Cancel_Click" Grid.Column="2" Margin="0,10,110,0"/>
+            <Button Name="Save" Grid.Column="2" Content="Lưu" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Click="Save_Click" Margin="0,10,29.6,0"/>
+            <!--#endregion-->
+
+            <!--#region Add content -->
+            <StackPanel Grid.Row="1" Margin="20">
+                <TextBox Text="{Binding Name}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.Hint="Tên sản phẩm"
+                HorizontalAlignment="Stretch" FontSize="20" FontWeight="Bold" Height="60" Foreground="#ff0095" Margin="0 0 0 30"/>
+
+                <TextBox Text="{Binding SellPrice, StringFormat='#,##'}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.Hint="Giá sản phẩm" 
+                HorizontalAlignment="Stretch" FontSize="20" FontWeight="Bold" Height="60" Foreground="#ff0095" Margin="0 0 0 30"/>
+
+                <TextBox Text="{Binding Description}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.Hint="Mô tả sản phẩm"
+                AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxHeight="270"
+                HorizontalAlignment="Stretch" FontSize="20" FontWeight="Bold" Foreground="#ff0095" Margin="0 0 0 30"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="20" Grid.Column="1">
+
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
+                    <Button Name="JourneyBrowse" Background="Transparent" BorderBrush="Transparent" Width="80" Height="60" Click="BrowseImage" Margin="0,0,0,-0.2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <materialDesign:PackIcon Kind="ImagePlus" Height="60" Width="108" Foreground="DarkGreen" Margin="-28,0,-32,-8"/>
+                    </Button>
+                    <TextBlock  Text="Thêm hình ảnh sản phẩm: " FontSize="20" FontWeight="Bold" Foreground="#ff0095" Height="40" VerticalAlignment="Bottom"/>
+                </StackPanel>
+
+                <Image Stretch="Fill" VerticalAlignment="Top" Name="CakeImg" Source="{Binding BMPImg}" Height="300"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2" Margin="20">
+                <ComboBox Name="TypeCb" Height="60" Margin="0 0 0 30" materialDesign:HintAssist.Hint="Loại sản phẩm" FontSize="20" FontWeight="Bold" Foreground="#ff0095">
+                    <ComboBoxItem Content="Cake" />
+                    <ComboBoxItem Content="Bread" />
+                    <ComboBoxItem Content="Bagels" />
+                    <ComboBoxItem Content="Buns" />
+                    <ComboBoxItem Content="Loaf cake" />
+                    <ComboBoxItem Content="Cupcake"/>
+                    <ComboBoxItem Content="Others"/>
+                </ComboBox>
+                
+                <DatePicker Name="DateAdded"  Height="60" Text="{Binding DateAdded, StringFormat='dd/MM/yyyy'}" FontSize="20" Foreground="#ff0093" FontWeight="Bold" Margin="0 0 0 30" materialDesign:HintAssist.Hint="Ngày thêm"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+
+                <TextBox Text="{Binding PurchasePrice, StringFormat='#,##'}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.Hint="Giá nhập/sản phẩm" 
+                HorizontalAlignment="Stretch" FontSize="20" FontWeight="Bold" Height="60" Foreground="#ff0095" Margin="0 0 0 30"/>
+            </StackPanel>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>

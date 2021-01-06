@@ -1,0 +1,167 @@
+<root>
+  <AppSetting>
+    <ShowSplashScreen>true</ShowSplashScreen>
+  </AppSetting>
+  <CakeList>
+    <Cake>
+      <Id>0</Id>
+      <Name>MultiGrain Bagels(3 Pack)</Name>
+      <Type>Bagels</Type>
+      <Description>Nếu bạn là người thích món mocha đá xay, với mùi thơm và vị ngọt đắng hoàn hảo giữa cà phê và socola, thì bạn cũng không thể cưỡng lại chiếc bánh donut này. Ngoại hình đơn giản có phần "xù xì" của chiếc bánh, nhưng hương vị lại quyến rũ vô cùng!</Description>
+      <DateAdded>12/12/2020</DateAdded>
+      <Image>0.jpeg</Image>
+      <PurchasePrice>50000</PurchasePrice>
+      <SellPrice>66000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>2</Id>
+      <Name>Baby Canxi Buns(6 Pack)</Name>
+      <Type>Buns</Type>
+      <Description>[Bánh canxi vỏ trứng với bột yến mạch – Baby Canxi Buns]
+Đã từ lâu, rất nhiều khách hàng thân quý của La Vita Bakery không ngớt nhắn tin, gọi điện thậm chí chia sẻ những tâm sự dài về một mong muốn có dòng sản phẩm bánh dành cho các bé đang thời kỳ ăn dặm hoặc các mẹ bầu, những người đang nâng niu đứa con yêu quý của mình trong bụng. Họ tìm kiếm một dòng bánh vừa ngon, mượt mà dễ ăn lại cung cấp đầy đủ các dưỡng chất thiết yếu nhất cho trẻ nhỏ và mẹ bầu trong giai đoạn phát triển mạnh mẽ của thể chất lẫn trí lực.
+Sự ngọt ngào mềm mại từ những loại bột cao cấp cùng sữa tươi, được bổ sung xốt canxi vỏ trứng và bột yến mạch, bánh canxi yến mạch sẽ là món ăn ngon miệng giàu dinh dưỡng và vi chất giúp bé tăng cường sức đề kháng, phát triển tốt chiều cao, giúp các mẹ bầu cung cấp nhiều hơn năng lượng cùng dưỡng chất cho thai nhi. Không những thế, vì là dòng bánh mì truyền thống nên bánh có thể được dùng hàng ngày, trong mọi bữa ăn.</Description>
+      <DateAdded>13/12/2020</DateAdded>
+      <Image>2.jpeg</Image>
+      <PurchasePrice>60000</PurchasePrice>
+      <SellPrice>82000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>3</Id>
+      <Name>Diet Whole Wheat Mix+</Name>
+      <Type>Bread</Type>
+      <Description>Dòng bánh ăn kiêng mới nhất, bao gồm bột nguyên cám, bột mì lúa mạch đen, các loại hạt óc chó, hạnh nhân, nho khô,… cho một hương vị ngon miệng nhưng vẫn giúp hỗ trợ ăn kiêng, giảm cân hiệu quả.</Description>
+      <DateAdded>05/01/2021</DateAdded>
+      <Image>3.jpeg</Image>
+      <PurchasePrice>60000</PurchasePrice>
+      <SellPrice>89000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>4</Id>
+      <Name>French Brioche</Name>
+      <Type>Loaf cake</Type>
+      <Description>Sau nhiều lần thử công thức Bánh Mì Hoa Cúc, cuối cùng chiếc bánh “thần thánh” đến từ nước Pháp đã xuất hiện tại các cửa hàng Cake Shop.
+
+Điểm đặc biệt của Bánh Mì Hoa Cúc tại Cake Shop là ruột bánh mềm, ẩm nhưng rất xốp, nhẹ và thớ bánh dai mịn khác hẳn các loại bánh Brioche công nghiệp đóng gói siêu thị.</Description>
+      <DateAdded>05/01/2021</DateAdded>
+      <Image>4.jpg</Image>
+      <PurchasePrice>70000</PurchasePrice>
+      <SellPrice>95000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>5</Id>
+      <Name>Red Velvet Cupcake</Name>
+      <Type>Cupcake</Type>
+      <Description>Là một món bánh không chỉ phổ biến và được ưa chuộng ở Bắc Mỹ, red velvet cupcake là một cái tên không thể không nhắc đến đối với những tín đồ hảo của ngọt trên khắp thế giới. Thứ bánh ngọt mang màu đỏ thắm đặc trưng này đã “lấy cắp” đi trái tim của rất nhiều người, không chỉ bởi hương vị mà còn do ngoại hình và cái tên quá đỗi kiêu sa.</Description>
+      <DateAdded>02/01/2021</DateAdded>
+      <Image>5.jpg</Image>
+      <PurchasePrice>20000</PurchasePrice>
+      <SellPrice>40000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>8</Id>
+      <Name>Hot Cross Buns (6 Pack)</Name>
+      <Type>Buns</Type>
+      <Description>Hot Cross Bun là một loại bánh ngọt hình tròn có hình chữ thập ở mặt trên. Theo truyền thống, bánh thường được dùng vào ngày lễ thứ sáu Good Friday trước Lễ Phục Sinh. Tuy nhiên ở nơi xuất xứ của chúng là Anh hoặc ở một số cửa hàng ở Úc, bánh được bày bán quanh năm. Do đó, La Vita cũng luôn sẵn sàng làm bánh này bất cứ lúc nào trong năm theo yêu cầu của quý khách hàng.</Description>
+      <DateAdded>06/01/2021</DateAdded>
+      <Image>8.jpeg</Image>
+      <PurchasePrice>150000</PurchasePrice>
+      <SellPrice>174000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>7</Id>
+      <Name>Chocolate Orange Scones (3 Pack)</Name>
+      <Type>Others</Type>
+      <Description>Scones là dòng bánh cao cấp và được mệnh danh là dòng bánh Hoàng Tộc bởi xưa kia bánh thường được dùng trong các buổi trà chiều của Nữ Hoàng Anh. Do đó khi dùng với các loại trà Anh rất hợp vị và tôn lên sự tinh tế của Scones.</Description>
+      <DateAdded>05/01/2021</DateAdded>
+      <Image>7.jpeg</Image>
+      <PurchasePrice>50000</PurchasePrice>
+      <SellPrice>75000</SellPrice>
+    </Cake>
+    <Cake>
+      <Id>1</Id>
+      <Name>Banana Walnuts Birthday Cake</Name>
+      <Type>Cake</Type>
+      <Description>Có một loại bánh không cầu kỳ, không lộng lẫy nhưng thơm ngon theo một hương vị rất riêng biệt. Hương vị được quyện nên từ vị ngọt tự nhiên của chuối chín dẻo thơm, vị béo bùi từ những hạt óc chó dinh dưỡng, kèm theo lớp bánh bông lan mềm mịn. Đó chính là Banana Walnuts Cake.
+
+Sự kết hợp của chuối và hạt óc chó – 2 loại thực phẩm giàu chất dinh dưỡng cho sức khỏe và sự phát triển của trí não, đã tạo nên một chiếc bánh thơm ngon khó cưỡng và có giá trị dinh dưỡng cao.
+
+Một chiếc bánh sinh nhật giản đơn và thuần khiết, nhưng luôn là món quà “ưng cái bụng” dành cho những ai yêu thích hương vị nguyên chất thơm lành từ thiên nhiên xứ mình.</Description>
+      <DateAdded>01/01/2021</DateAdded>
+      <Image>1.jpg</Image>
+      <PurchasePrice>320000</PurchasePrice>
+      <SellPrice>580000</SellPrice>
+    </Cake>
+  </CakeList>
+  <BillLists>
+    <Bill>
+      <Id>0</Id>
+      <Name>Lê Minh Hiếu</Name>
+      <Phone>0984635215</Phone>
+      <Cake>Baby Canxi Buns(6 Pack)</Cake>
+      <Quantity>2</Quantity>
+      <TotalPrice>164000</TotalPrice>
+      <DateCreate>13/09/2020</DateCreate>
+      <Status>Đã hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>1</Id>
+      <Name>Vương Đại Phong</Name>
+      <Phone>09786325410</Phone>
+      <Cake>MultiGrain Bagels(3 Pack)</Cake>
+      <Quantity>1</Quantity>
+      <TotalPrice>66000</TotalPrice>
+      <DateCreate>13/10/2020</DateCreate>
+      <Status>Đã hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>2</Id>
+      <Name>Hoàng Thiện Tiên</Name>
+      <Phone>0965439852</Phone>
+      <Cake>Banana Walnuts Birthday Cake</Cake>
+      <Quantity>2</Quantity>
+      <TotalPrice>1180000</TotalPrice>
+      <DateCreate>06/01/2021</DateCreate>
+      <Status>Chưa hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>3</Id>
+      <Name>Trần Diễm Khuê</Name>
+      <Phone>0985674129</Phone>
+      <Cake>Diet Whole Wheat Mix+</Cake>
+      <Quantity>5</Quantity>
+      <TotalPrice>445000</TotalPrice>
+      <DateCreate>06/01/2021</DateCreate>
+      <Status>Chưa hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>4</Id>
+      <Name>Úc Tuấn Minh</Name>
+      <Phone>0958763412</Phone>
+      <Cake>French Brioche</Cake>
+      <Quantity>7</Quantity>
+      <TotalPrice>665000</TotalPrice>
+      <DateCreate>06/01/2021</DateCreate>
+      <Status>Đã hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>5</Id>
+      <Name>Quang Hoài Bắc</Name>
+      <Phone>0967519634</Phone>
+      <Cake>Red Velvet Cupcake</Cake>
+      <Quantity>10</Quantity>
+      <TotalPrice>400000</TotalPrice>
+      <DateCreate>06/01/2021</DateCreate>
+      <Status>Đã hoàn thành</Status>
+    </Bill>
+    <Bill>
+      <Id>6</Id>
+      <Name>Chử Duy Mạnh</Name>
+      <Phone>0984638512</Phone>
+      <Cake>Hot Cross Buns (6 Pack)</Cake>
+      <Quantity>6</Quantity>
+      <TotalPrice>1044000</TotalPrice>
+      <DateCreate>06/01/2021</DateCreate>
+      <Status>Chưa hoàn thành</Status>
+    </Bill>
+  </BillLists>
+</root>

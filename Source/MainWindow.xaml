@@ -1,0 +1,82 @@
+﻿<Window x:Class="CakeShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CakeShop"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="We Split" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
+        Width="1400" Height="800" WindowStyle="None">
+
+    <materialDesign:DrawerHost HorizontalAlignment="Center" VerticalAlignment="Center" Width="1400">
+        <materialDesign:DrawerHost.Style>
+            <Style TargetType="materialDesign:DrawerHost" BasedOn="{StaticResource {x:Type materialDesign:DrawerHost}}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsChecked, ElementName=BackgroundToggle}" Value="True">
+                        <Setter Property="OverlayBackground" Value="{DynamicResource PrimaryHueMidBrush}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </materialDesign:DrawerHost.Style>
+
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <StackPanel>
+                <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Margin="4"
+                HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignFlatButton}" Content="TRANG CHỦ" Width="300" Name="HomePage" Click="HomePage_Click"/>
+                <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Margin="4"
+                HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignFlatButton}" Content="DANH SÁCH ĐƠN HÀNG" Width="300" Name="BillList" Click="BillList_Click"/>
+                <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Margin="4"
+                HorizontalAlignment="Center" Style="{DynamicResource MaterialDesignFlatButton}" Content="THỐNG KÊ DOANH THU" Width="300" Name="Statistics" Click="Statistics_Click"/>
+            </StackPanel>
+        </materialDesign:DrawerHost.LeftDrawerContent>
+
+        <Grid>
+            <!--#region Grid definition -->
+            <Grid.Background>
+                <ImageBrush x:Name="bg" Opacity="0.5"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="750"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+
+            <!--#region Title Bar -->
+            <materialDesign:ColorZone Mode="PrimaryLight" Grid.ColumnSpan="2" >
+                <StackPanel Orientation="Horizontal">
+                    <Button Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="Transparent" BorderBrush="Transparent" Width="50" Height="44">
+                        <materialDesign:PackIcon Kind="MicrosoftXboxControllerMenu" Width="80" Height="50" Margin="-30,-6,-32.4,-8"/>
+                    </Button>
+                    <Image Name="icon" Width="50" Height="40"/>
+                    <TextBlock Width="120" Text="Cake Shop" FontSize="20" FontWeight="Bold" Foreground="White" Padding="15"/>
+                    <Button Margin="980,0,0,0" Background="Transparent" BorderBrush="Transparent" Name="SettingButton" Width="50" Height="44" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="SettingButton_Click">
+                        <materialDesign:PackIcon Kind="Cog" Foreground="White" Width="80" Height="40" Margin="-30,0,-32.4,-8"/>
+                    </Button>
+
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="InforButton" Width="50" Height="44" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="InforButton_Click">
+                        <materialDesign:PackIcon Kind="Information" Foreground="White" Width="80" Height="40" Margin="-30,0,-32.4,-8"/>
+                    </Button>
+
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="MinimizeButton" Width="50" Height="44" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="MinimizeButton_Click">
+                        <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White" Width="80" Height="44" Margin="-30,0,-32.4,-8" />
+                    </Button>
+
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="CloseButton" Width="50" Height="44" Click="CloseButton_Click" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <materialDesign:PackIcon Foreground="Red" Kind="CloseBox" Height="40" Width="80" Margin="-30,0,-32.4,-8" />
+                    </Button>
+                </StackPanel>
+            </materialDesign:ColorZone>
+            <!--#endregion-->
+
+            <Frame x:Name="view" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Grid.Row="1" JournalOwnership="OwnsJournal"/>
+        </Grid>
+    </materialDesign:DrawerHost>
+</Window>
